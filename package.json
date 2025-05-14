@@ -1,0 +1,37 @@
+{
+  "name": "parcial-2tp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "license": "AGPL-version-3.0",
+  "private": false,
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "",
+  "keywords": [],
+  "author": {
+    "name": "Alejandro D. Fenos"
+  },
+  "contributors": [],
+  "scripts": {
+    "dev": "node --watch ./src/app.js",
+    "lint": "npx @biomejs/biome check --write ./src"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "morgan": "^1.10.0"
+  }
+}
