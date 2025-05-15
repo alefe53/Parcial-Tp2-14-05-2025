@@ -1,7 +1,6 @@
-import  fs  from "node:fs/promises";
+import fs from "node:fs/promises";
 import path from "node:path";
-import {config} from "../config/config.js"
-
+import { config } from "../config/config.js";
 
 const DATA_URL = config.EXTERNAL_DATA_URL;
 const SAVE_PATH = path.resolve(config.EXTERNAL_DATA_SAVE_PATH);

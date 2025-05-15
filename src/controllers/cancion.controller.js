@@ -3,9 +3,7 @@ import { CancionService } from "../services/cancion.service.js";
 export const CancionController = {
 	cancionValidation: async (req, res) => {
 		const { id } = req.params;
-		console.log("Controller: Recibido ID de ruta:", id);
 		const cancion = await CancionService.serviceCancionValidation(id);
-		console.log("Controller: Recibido del servicio:", cancion);
 
 		if (!cancion) {
 			res.status(404).json({

@@ -18,4 +18,5 @@ statusRouter.get("/v02/status", (req, res) => {
 	});
 });
 
+
 export { statusRouter };
