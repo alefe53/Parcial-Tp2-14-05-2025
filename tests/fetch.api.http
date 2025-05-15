@@ -4,5 +4,5 @@
 # y guardarlos en un archivo dentro de /src/db.
 # Se espera un mensaje de confirmación: {"message": "Archivo CSV guardado correctamente"}
 
-GET http://localhost:3003/api/data_externa
+GET http://127.0.0.1:3003/api/data_externa
 Content-Type: application/json

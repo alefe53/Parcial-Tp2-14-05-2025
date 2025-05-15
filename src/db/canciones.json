@@ -1,14 +1,20 @@
 [
 	{
+		"id": "23e8dd3f-9134-4bd3-8e6b-4c472cb4c179",
+		"titulo": "El eternauta - Soundtrack",
+		"autor": "Anderson",
+		"anioLanzamiento": "2021"
+	},
+	{
+		"id": "2ea39aeb-933e-4614-8edf-9f9b7af35da2",
+		"titulo": "El señor de los anillos - Soundtrack",
+		"autor": "Perón",
+		"anioLanzamiento": "1920"
+	},
+	{
 		"id": "001",
 		"titulo": "Soundtrack - El Origen",
 		"autor": "Hans Zimmer",
 		"anioLanzamiento": "2023"
-	},
-	{
-		"id": "23e8dd3f-9134-4bd3-8e6b-4c472cb4c179",
-		"titulo": "El eternauta - Soundtrack",
-		"autor": "Anderson",
-		"anioLanzamiento": "2025"
 	}
 ]

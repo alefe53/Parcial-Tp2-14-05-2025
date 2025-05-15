@@ -2,12 +2,9 @@ import { Cancion } from "../models/cancion.js";
 import { CancionRepository } from "../repositories/canciones.repository.js";
 
 export const CancionService = {
-	serviceCancionValidation: (id) => {
-		console.log(id);
-		const idCancion = CancionRepository.getById(id);
-		console.log(idCancion);
+	serviceCancionValidation: async (id) => {
+		const idCancion = await CancionRepository.getById(id);
 		if (!idCancion) return null;
-
 		return idCancion;
 	},
 	serviceCancionCreation: (cancion) => {
@@ -26,5 +23,20 @@ export const CancionService = {
 		CancionRepository.createOne(modelCancion);
 
 		return modelCancion;
+	},
+	serviceCancionDelete: async (id) => {
+		const idCancion = await CancionRepository.deleteById(id);
+		if (!idCancion) return null;
+		return idCancion;
+	},
+	serviceUpdateCancion: async (autor, anioLanzamiento) => {
+		const canciones = await CancionRepository.updateByAutor(
+			autor,
+			anioLanzamiento,
+		);
+		if (canciones === null) {
+			return null;
+		}
+		return canciones;
 	},
 };

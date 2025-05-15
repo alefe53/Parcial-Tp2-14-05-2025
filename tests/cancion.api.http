@@ -29,15 +29,12 @@ Content-Type: application/json
 # Este endpoint debe actualizar los datos del libro con el ID especificado.
 # Se espera una respuesta con el libro actualizado.
 
-PUT http://localhost:3003/api/book/b72f94f2-bc09-49e4-85a6-83fd7eaa29c0
+PUT http://127.0.0.1:3003/canciones/update-anioLanzamiento/
 Content-Type: application/json
 
 {
-  "title": "Cien años de soledad (Edición actualizada)",
-  "author": "Gabriel García Márquez",
-  "isbn": "978-3-16-148410-0",
-  "publishedDate": "1967-06-05",
-  "availableCopies": 6
+  "autor": "Anderson",
+  "anioLanzamiento": "2029"
 }
 
 ###
@@ -46,5 +43,5 @@ Content-Type: application/json
 # Este endpoint debe eliminar el libro con el ID especificado.
 # Se espera un mensaje de éxito: {"message": "Libro eliminado correctamente"}
 
-DELETE http://localhost:3003/api/book/b72f94f2-bc09-49e4-85a6-83fd7eaa29c0
+DELETE http://127.0.0.1:3003/canciones/cancion/001
 Content-Type: application/json

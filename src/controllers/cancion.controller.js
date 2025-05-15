@@ -3,7 +3,9 @@ import { CancionService } from "../services/cancion.service.js";
 export const CancionController = {
 	cancionValidation: async (req, res) => {
 		const { id } = req.params;
+		console.log("Controller: Recibido ID de ruta:", id);
 		const cancion = await CancionService.serviceCancionValidation(id);
+		console.log("Controller: Recibido del servicio:", cancion);
 
 		if (!cancion) {
 			res.status(404).json({
@@ -40,5 +42,56 @@ export const CancionController = {
 			});
 			return;
 		}
+	},
+	cancionDeleteOne: async (req, res) => {
+		const { id } = req.params;
+
+		const idCancion = await CancionService.serviceCancionDelete(id);
+
+		if (!idCancion) {
+			res.status(404).json({
+				payload: null,
+				message: "No se pudo borrar la cancion",
+				ok: false,
+			});
+			return;
+		}
+
+		res.status(200).json({
+			message: `Success:${idCancion} deleted`,
+			payload: { idCancion },
+			ok: true,
+		});
+		return;
+	},
+	cancionUpdateByAutor: async (req, res) => {
+		const { autor, anioLanzamiento } = req.body;
+		console.log(autor, anioLanzamiento);
+
+		const cancionesUpdated = await CancionService.serviceUpdateCancion(
+			autor,
+			anioLanzamiento,
+		);
+
+		if (!cancionesUpdated) {
+			res.status(404).json({
+				payload: null,
+				message: "No se pudo actualizar nada",
+				ok: false,
+			});
+			return;
+		}
+
+		const newUpdatedCanciones = cancionesUpdated.map((cancion) => ({
+			id: cancion.id,
+			anioLanzamiento: cancion.anioLanzamiento,
+		}));
+
+		res.status(200).json({
+			message: "Cancion modificada",
+			payload: newUpdatedCanciones,
+			ok: true,
+		});
+		return;
 	},
 };
